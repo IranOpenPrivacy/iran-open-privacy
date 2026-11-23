@@ -54,7 +54,7 @@ controls:
     check: reviewed
     title_fa: "بازبینی دوره‌ای کنترل‌ها"
     title_en: "Scheduled control reviews"
-    requirement_fa: "کنترل‌های داخلی به‌صورت دوره‌ای (دست‌کم فصلی) توسط خود شرکت بازبینی و نتیجه برای ممیز ثبت می‌شود."
+    requirement_fa: "شرکت کنترل‌های داخلی‌اش را دست‌کم هر فصل خودش بازبینی می‌کند و نتیجه را برای ممیز ثبت می‌کند."
     requirement_en: "The company reviews its own controls on a schedule (at least quarterly) and records results for the auditor."
     evidence: [document, log-sample]
     mappings:

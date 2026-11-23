@@ -91,7 +91,7 @@ def render_fa(domains: list[dict]) -> str:
         dom = d["domain"]
         out += [f"## حوزهٔ {dom['number']}: {dom['title_fa']} ({dom['id']})", "", dom["summary_fa"], ""]
         if dom.get("status") == "draft-pending-legal-review":
-            out += ["> **وضعیت: پیش‌نویس، هنوز توسط وکیل بازبینی نشده است.**", ""]
+            out += ["> **وضعیت: پیش‌نویس. هنوز هیچ وکیلی این بخش را بازبینی نکرده است.**", ""]
         out += ["| شناسه | سطح | بررسی | عنوان و الزام | شواهد | نگاشت |", "| --- | --- | --- | --- | --- | --- |"]
         for ctl in d["controls"]:
             ev = "، ".join(EVID_FA[e] for e in ctl["evidence"])
