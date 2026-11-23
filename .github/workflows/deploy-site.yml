@@ -1,7 +1,7 @@
 name: deploy-site
 
 # Rebuilds iranopenprivacy.org whenever the standard or docs change on main.
-# Needs the repository secret VERCEL_DEPLOY_HOOK (a Vercel deploy hook URL for IranOpenPrivacy/website).
+# Needs the repository secret VERCEL_DEPLOY_HOOK (a Vercel deploy hook URL for IranOpenPrivacy/iranopenprivacy.org).
 on:
   push:
     branches: [main]
