@@ -1,0 +1,55 @@
+schema_version: 1
+domain:
+  id: MIN
+  number: 3
+  title_fa: "حداقل‌سازی و نگهداشت"
+  title_en: "Minimization and retention"
+  summary_fa: "فقط داده‌ای که لازم است جمع می‌شود و برای مدتی که لازم است می‌ماند. حذف یعنی واقعاً حذف."
+  summary_en: "Only necessary data is collected and kept only as long as needed. Deletion actually deletes."
+controls:
+  - id: MIN-01
+    level: 1
+    check: declared
+    title_fa: "جمع‌آوری فقط به اندازهٔ ضرورت"
+    title_en: "Collect only what is necessary"
+    requirement_fa: "داده فقط به اندازهٔ ضرورت و متناسب با اهداف اعلام‌شده جمع‌آوری می‌شود و برای اهداف دیگر به کار نمی‌رود."
+    requirement_en: "Data is collected only as far as necessary for the stated purposes and is not reused for other purposes."
+    evidence: [document]
+    mappings:
+      gdpr: ["Art. 5(1)(b)", "Art. 5(1)(c)"]
+      iso27701: ["7.4"]
+      local:
+        status: draft-pending-legal-review
+        refs: ["قانون تجارت الکترونیکی، ماده ۵۹"]
+  - id: MIN-02
+    level: 2
+    check: reviewed
+    title_fa: "برنامهٔ نگهداشت"
+    title_en: "Retention schedule"
+    requirement_fa: "برای هر دستهٔ داده مدت نگهداشت مشخص است و پس از آن داده حذف یا ناشناس می‌شود."
+    requirement_en: "Each data category has a defined retention period, after which data is deleted or anonymized."
+    evidence: [document, config]
+    mappings:
+      gdpr: ["Art. 5(1)(e)"]
+      iso27701: ["7.4"]
+  - id: MIN-03
+    level: 2
+    check: reviewed
+    title_fa: "حذف واقعی"
+    title_en: "Deletion that actually deletes"
+    requirement_fa: "حذف شامل پایگاه‌داده، ذخیره‌ساز فایل و پشتیبان‌ها (ظرف مدت تعریف‌شده) می‌شود. بازبین نمونه‌ای از درخواست‌های حذف را بررسی می‌کند."
+    requirement_en: "Deletion covers databases, file storage and backups (within a defined period). Reviewers sample deletion requests."
+    evidence: [log-sample, test-result]
+    mappings:
+      gdpr: ["Art. 17"]
+      iso27701: ["7.4"]
+  - id: MIN-04
+    level: 2
+    check: reviewed
+    title_fa: "داده واقعی در محیط آزمایش نیست"
+    title_en: "No real personal data in test environments"
+    requirement_fa: "محیط آزمایش و توسعه از داده شخصی واقعی استفاده نمی‌کند، مگر با کنترل‌های معادل محیط عملیاتی."
+    requirement_en: "Test and development environments do not use real personal data, unless protected by controls equal to production."
+    evidence: [interview, config]
+    mappings:
+      gdpr: ["Art. 25", "Art. 32"]

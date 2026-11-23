@@ -1,0 +1,58 @@
+name: درخواست بازبین
+description: می‌خواهید بازبین سطح ۲ شوید. می‌توانید با نام مستعار فعالیت کنید.
+title: "[بازبین] "
+labels: ["reviewer-application"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **نام واقعی، شماره تلفن یا اطلاعات شخصی را در این فرم عمومی ننویسید.**
+        فقط نام مستعار پایدار بنویسید. هویت واقعی را در صورت نیاز از راه ایمیل به نگهدارنده‌ها می‌گویید (contact@iranopenprivacy.org).
+        نام مستعار شما فقط در صورت پذیرش علنی می‌شود.
+  - type: input
+    id: handle
+    attributes:
+      label: نام مستعار دلخواه
+    validations:
+      required: true
+  - type: checkboxes
+    id: skills
+    attributes:
+      label: مهارت‌ها
+      options:
+        - label: امنیت اطلاعات یا امنیت اپلیکیشن
+        - label: حریم خصوصی یا حفاظت از داده
+        - label: حقوق فناوری یا تجارت الکترونیک
+        - label: مهندسی نرم‌افزار و زیرساخت
+        - label: مدیریت محصول یا حاکمیت داده
+  - type: textarea
+    id: experience
+    attributes:
+      label: تجربهٔ مرتبط (به‌طور خلاصه)
+      description: بدون ذکر نام کارفرما اگر نمی‌خواهید شناسایی شوید.
+    validations:
+      required: true
+  - type: textarea
+    id: conflicts
+    attributes:
+      label: تعارض منافع
+      description: شرکت‌هایی که در آن‌ها کار کرده‌اید، سهام دارید یا مشاوره داده‌اید (در ۲۴ ماه گذشته).
+  - type: dropdown
+    id: hours
+    attributes:
+      label: چند ساعت در ماه می‌توانید وقت بگذارید؟
+      options:
+        - ۲ تا ۴ ساعت
+        - ۵ تا ۸ ساعت
+        - بیش از ۸ ساعت
+    validations:
+      required: true
+  - type: checkboxes
+    id: agree
+    attributes:
+      label: تأیید می‌کنم که
+      options:
+        - label: آیین‌نامهٔ رفتار و قواعد تعارض منافع را خوانده‌ام.
+          required: true
+        - label: می‌دانم برای پذیرش، یک آزمون کوتاه (بازبینی یک سند نمونه) می‌دهم.
+          required: true

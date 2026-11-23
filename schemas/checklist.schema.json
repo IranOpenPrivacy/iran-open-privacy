@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iranopenprivacy.org/schemas/checklist.schema.json",
+  "title": "IOP checklist domain file",
+  "type": "object",
+  "required": ["schema_version", "domain", "controls"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": 1 },
+    "domain": {
+      "type": "object",
+      "required": ["id", "number", "title_fa", "title_en", "summary_fa", "summary_en"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "number": { "type": "integer", "minimum": 1, "maximum": 20 },
+        "title_fa": { "type": "string", "minLength": 2 },
+        "title_en": { "type": "string", "minLength": 2 },
+        "summary_fa": { "type": "string", "minLength": 10 },
+        "summary_en": { "type": "string", "minLength": 10 },
+        "status": { "enum": ["draft-pending-legal-review", "reviewed"] }
+      }
+    },
+    "controls": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/control" }
+    }
+  },
+  "$defs": {
+    "control": {
+      "type": "object",
+      "required": ["id", "level", "check", "title_fa", "title_en", "requirement_fa", "requirement_en", "evidence"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Z]{3}-[0-9]{2}$" },
+        "level": { "enum": [1, 2, 3] },
+        "check": { "enum": ["auto", "declared", "reviewed"] },
+        "title_fa": { "type": "string", "minLength": 3 },
+        "title_en": { "type": "string", "minLength": 3 },
+        "requirement_fa": { "type": "string", "minLength": 10 },
+        "requirement_en": { "type": "string", "minLength": 10 },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["url", "document", "screenshot", "config", "log-sample", "interview", "contract", "test-result", "scan"] }
+        },
+        "mappings": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "gdpr": { "type": "array", "items": { "type": "string" } },
+            "iso27701": { "type": "array", "items": { "type": "string" } },
+            "asvs": { "type": "array", "items": { "type": "string" } },
+            "local": {
+              "type": "object",
+              "required": ["status", "refs"],
+              "additionalProperties": false,
+              "properties": {
+                "status": { "enum": ["draft-pending-legal-review", "reviewed"] },
+                "refs": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

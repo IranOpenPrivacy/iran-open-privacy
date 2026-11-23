@@ -1,0 +1,47 @@
+name: پیشنهاد تغییر در استاندارد
+description: پیشنهاد یا نظر دربارهٔ چک‌لیست، سطح‌ها یا فرایند. مهلت نظرخواهی پیش‌فرض ۱۴ روز است.
+title: "[پیشنهاد] "
+labels: ["proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        لطفاً اطلاعات هویتی یا تماس شخصی در این فرم ننویسید. می‌توانید با نام مستعار مشارکت کنید.
+  - type: dropdown
+    id: area
+    attributes:
+      label: مربوط به کدام بخش است؟
+      options:
+        - یک کنترل مشخص در چک‌لیست
+        - سطح‌ها و معیارها
+        - فرایند راستی‌آزمایی
+        - تعارض منافع و حاکمیت
+        - سند حریم خصوصی و نسخه‌ها
+        - صفحهٔ اعتماد
+        - دیگر
+    validations:
+      required: true
+  - type: input
+    id: control
+    attributes:
+      label: شناسهٔ کنترل (اگر مربوط است)
+      placeholder: "مثلاً SEC-04"
+  - type: textarea
+    id: proposal
+    attributes:
+      label: پیشنهاد شما چیست؟
+      description: دقیق بنویسید چه چیزی باید تغییر کند.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: چرا؟
+      description: چه مشکلی را حل می‌کند؟ اگر منبع (قانون، استاندارد، تجربه) دارید ذکر کنید.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: این الزام را چطور می‌توان بررسی کرد؟
+      description: چه شواهدی نشان می‌دهد یک شرکت آن را رعایت می‌کند؟

@@ -1,0 +1,64 @@
+schema_version: 1
+domain:
+  id: CON
+  number: 2
+  title_fa: "رضایت و مبنای قانونی"
+  title_en: "Consent and lawful basis"
+  summary_fa: "برای هر هدف پردازش، مبنایی مشخص و مستند وجود دارد و رضایت واقعی و قابل پس‌گرفتن است."
+  summary_en: "Every processing purpose has a documented basis, and consent is real and withdrawable."
+controls:
+  - id: CON-01
+    level: 2
+    check: reviewed
+    title_fa: "مبنا برای هر هدف"
+    title_en: "A basis for every purpose"
+    requirement_fa: "برای هر هدف پردازش مبنای آن (مثلاً رضایت یا ضرورت اجرای قرارداد) مشخص و مستند است."
+    requirement_en: "Each processing purpose has a documented basis, for example consent or contract necessity."
+    evidence: [document, interview]
+    mappings:
+      gdpr: ["Art. 6"]
+      iso27701: ["7.2"]
+  - id: CON-02
+    level: 1
+    check: declared
+    title_fa: "رضایت صریح و جدا"
+    title_en: "Explicit, unbundled consent"
+    requirement_fa: "رضایت صریح است، با شرایط استفاده از سرویس بسته‌بندی نمی‌شود و گزینهٔ از پیش‌تیک‌خورده ندارد."
+    requirement_en: "Consent is explicit, not bundled with terms of service, and never pre-ticked."
+    evidence: [screenshot, document]
+    mappings:
+      gdpr: ["Art. 7", "Art. 4(11)"]
+      iso27701: ["7.2"]
+  - id: CON-03
+    level: 2
+    check: reviewed
+    title_fa: "سابقهٔ رضایت"
+    title_en: "Consent records"
+    requirement_fa: "ثبت می‌شود چه کسی، چه زمانی و با چه نسخه‌ای از متن رضایت داده است."
+    requirement_en: "Who consented, when, and to which version of the text is recorded."
+    evidence: [log-sample, config]
+    mappings:
+      gdpr: ["Art. 7(1)"]
+  - id: CON-04
+    level: 1
+    check: declared
+    title_fa: "پس‌گرفتن رضایت به آسانی دادن"
+    title_en: "Withdrawal as easy as giving"
+    requirement_fa: "کاربر می‌تواند رضایت خود را به همان سادگی که داده، پس بگیرد."
+    requirement_en: "Users can withdraw consent as easily as they gave it."
+    evidence: [screenshot, document]
+    mappings:
+      gdpr: ["Art. 7(3)"]
+  - id: CON-05
+    level: 2
+    check: reviewed
+    title_fa: "داده‌های حساس فقط با رضایت صریح"
+    title_en: "Sensitive data only with explicit consent"
+    requirement_fa: "داده‌های مبین ریشهٔ قومی یا نژادی، دیدگاه عقیدتی و مذهبی، خصوصیات اخلاقی، وضعیت جسمانی، روانی یا جنسی فقط با رضایت صریح و برای هدفی مشخص پردازش می‌شوند."
+    requirement_en: "Data revealing ethnic or racial origin, beliefs or religion, moral characteristics, or physical, mental or sexual status is processed only with explicit consent and a stated purpose."
+    evidence: [document, interview]
+    mappings:
+      gdpr: ["Art. 9"]
+      local:
+        status: draft-pending-legal-review
+        refs: ["قانون تجارت الکترونیکی، ماده ۵۸"]

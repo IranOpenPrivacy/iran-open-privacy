@@ -1,0 +1,65 @@
+name: درخواست شرکت (شرکت آزمایشی)
+description: شرکت شما می‌خواهد در فاز آزمایشی سطح ۱ و ۲ شرکت کند.
+title: "[شرکت] "
+labels: ["company-application"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        این فرم **عمومی** است. نام شرکت و دامنه علنی می‌شود. اگر نمی‌خواهید درخواستتان علنی باشد، به contact@iranopenprivacy.org ایمیل بزنید.
+        اطلاعات تماس شخصی را اینجا ننویسید.
+
+        **شرایط فاز آزمایشی:** صفحهٔ حریم خصوصی عمومی از قبل دارید، حاضرید گزارش را منتشر کنید، و هیچ نگهدارنده‌ای مالک یا سرمایه‌گذار شما نیست.
+  - type: input
+    id: company
+    attributes:
+      label: نام شرکت یا محصول
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: دامنهٔ اینترنتی
+      placeholder: "example.ir"
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: نوع محصول
+      options:
+        - اپ مصرفی (کاربر نهایی)
+        - SaaS برای کسب‌وکارها
+        - مارکت‌پلیس یا فروشگاه
+        - مالی یا پرداخت
+        - آموزش
+        - سلامت
+        - دیگر
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: چه داده‌هایی از کاربران جمع می‌کنید؟
+      description: به‌طور خلاصه. بدون جزئیات حساس.
+    validations:
+      required: true
+  - type: input
+    id: policy
+    attributes:
+      label: آدرس صفحهٔ سیاست حریم خصوصی فعلی
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: تأیید می‌کنم که
+      options:
+        - label: حاضرم گزارش نهایی (برای سطح ۲) منتشر شود. پیش‌نویس را ۷ روز برای اصلاح خطاهای واقعی می‌بینم.
+          required: true
+        - label: می‌دانم سطح ۱ «اظهارشده» است و «گواهی» نیست.
+          required: true
+        - label: هیچ نگهدارندهٔ فعال IOP مالک، سرمایه‌گذار یا عضو هیئت‌مدیرهٔ شرکت من نیست، یا این رابطه را در توضیحات نوشته‌ام.
+          required: true
+  - type: textarea
+    id: conflicts
+    attributes:
+      label: تعارض منافع (اگر هست)

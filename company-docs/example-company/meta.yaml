@@ -1,0 +1,16 @@
+# Fictional example. No real company is behind this folder.
+slug: example-company
+company: "Example Shop (fictional)"
+domain: example.com
+domain_proof: dns-txt          # dns-txt | well-known-file
+contact_email: privacy@example.com
+level: none                    # none | declared | verified | continuously-verified
+level_granted: null
+level_expires: null
+document_versions:
+  - version: "1.0.0"
+    date: "2026-11-01"
+    change_type: initial
+  - version: "1.1.0"
+    date: "2026-11-23"
+    change_type: minor

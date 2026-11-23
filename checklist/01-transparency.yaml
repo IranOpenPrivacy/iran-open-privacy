@@ -1,0 +1,72 @@
+schema_version: 1
+domain:
+  id: TRN
+  number: 1
+  title_fa: "شفافیت"
+  title_en: "Transparency"
+  summary_fa: "کاربر باید بدون ورود به حساب و به زبان ساده بفهمد چه داده‌ای، برای چه و تا کی نگه داشته می‌شود."
+  summary_en: "Users can understand, in plain language and without logging in, what data is kept, why, and for how long."
+controls:
+  - id: TRN-01
+    level: 1
+    check: auto
+    title_fa: "صفحهٔ سیاست حریم خصوصی عمومی"
+    title_en: "Public privacy policy page"
+    requirement_fa: "صفحهٔ سیاست حریم خصوصی بدون ورود به حساب از صفحهٔ اصلی و از صفحهٔ ثبت‌نام قابل دسترسی است."
+    requirement_en: "The privacy policy is reachable without login from the home page and the sign-up page."
+    evidence: [url, scan]
+    mappings:
+      gdpr: ["Art. 12", "Art. 13", "Art. 14"]
+      iso27701: ["7.3"]
+  - id: TRN-02
+    level: 1
+    check: declared
+    title_fa: "زبان ساده و فارسی"
+    title_en: "Plain language, in Persian"
+    requirement_fa: "سند به فارسی روان نوشته شده و برای کاربر عادی قابل فهم است. اگر محصول به کاربران زبان‌های دیگر هم ارائه می‌شود، نسخهٔ آن زبان نیز موجود است."
+    requirement_en: "The document is written in plain Persian. Where the product serves other languages, a version in that language exists."
+    evidence: [document]
+    mappings:
+      gdpr: ["Art. 12"]
+  - id: TRN-03
+    level: 1
+    check: declared
+    title_fa: "محتوای حداقلی سند"
+    title_en: "Minimum document content"
+    requirement_fa: "سند می‌گوید چه داده‌ای جمع می‌شود، برای چه هدفی، تا کی نگه داشته می‌شود، با چه کسانی به اشتراک گذاشته می‌شود و کاربر چگونه می‌تواند حقوقش را اعمال کند."
+    requirement_en: "The document states what data is collected, for what purpose, how long it is kept, who it is shared with, and how users exercise their rights."
+    evidence: [document]
+    mappings:
+      gdpr: ["Art. 13"]
+      iso27701: ["7.3"]
+  - id: TRN-04
+    level: 2
+    check: reviewed
+    title_fa: "فهرست دارایی‌های داده"
+    title_en: "Data inventory"
+    requirement_fa: "فهرستی به‌روز از دسته‌های داده، منبع، هدف، محل نگهداری و اشخاص ثالث وجود دارد و دست‌کم سالی یک‌بار بازبینی می‌شود. خلاصهٔ آن عمومی است."
+    requirement_en: "A current inventory of data categories, source, purpose, storage location and third parties exists and is reviewed at least yearly. A summary is public."
+    evidence: [document, interview]
+    mappings:
+      gdpr: ["Art. 30"]
+      iso27701: ["7.2"]
+  - id: TRN-05
+    level: 1
+    check: auto
+    title_fa: "نسخه و تاریخ‌چهٔ تغییرات"
+    title_en: "Version number and change history"
+    requirement_fa: "سند دارای شمارهٔ نسخه، تاریخ آخرین به‌روزرسانی و پیوند به تاریخچهٔ تغییرات است. پیوند صفحهٔ حریم خصوصی سایت شرکت به سند منتشرشده روی IOP به نسخهٔ فعلی اشاره می‌کند."
+    requirement_en: "The document has a version number, a last-updated date and a link to its change history. The link from the company's privacy page to its IOP-hosted document points to the current version."
+    evidence: [url, scan]
+    mappings:
+      gdpr: ["Art. 12"]
+  - id: TRN-06
+    level: 2
+    check: reviewed
+    title_fa: "اطلاع‌رسانی تغییرات مهم"
+    title_en: "Notice of material changes"
+    requirement_fa: "تغییرات عمده در رویهٔ داده دست‌کم ۱۴ روز پیش از اجرا به کاربران اطلاع داده می‌شود."
+    requirement_en: "Material changes to data practice are announced to users at least 14 days before they take effect."
+    evidence: [log-sample, document]
+    mappings:
+      gdpr: ["Art. 13"]

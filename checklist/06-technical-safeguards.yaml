@@ -1,0 +1,116 @@
+schema_version: 1
+domain:
+  id: SEC
+  number: 6
+  title_fa: "پادمان‌های فنی"
+  title_en: "Technical safeguards"
+  summary_fa: "داده‌های شخصی با کنترل‌های فنی پایه در برابر دسترسی و افشای غیرمجاز محافظت می‌شوند."
+  summary_en: "Personal data is protected against unauthorized access and disclosure by baseline technical controls."
+controls:
+  - id: SEC-01
+    level: 1
+    check: auto
+    title_fa: "HTTPS و HSTS"
+    title_en: "HTTPS and HSTS"
+    requirement_fa: "همهٔ صفحه‌ها و APIها فقط با HTTPS در دسترس‌اند و HSTS فعال است."
+    requirement_en: "All pages and APIs are served over HTTPS only, with HSTS enabled."
+    evidence: [scan]
+    mappings:
+      gdpr: ["Art. 32"]
+      asvs: ["V9"]
+  - id: SEC-02
+    level: 1
+    check: auto
+    title_fa: "هدرهای امنیتی پایه"
+    title_en: "Baseline security headers"
+    requirement_fa: "هدرهای امنیتی پایه (مانند جلوگیری از حدس نوع محتوا و جلوگیری از قرارگیری در قاب) تنظیم شده‌اند."
+    requirement_en: "Baseline security headers (such as content-type sniffing protection and framing protection) are set."
+    evidence: [scan]
+    mappings:
+      gdpr: ["Art. 32"]
+      asvs: ["V14"]
+  - id: SEC-03
+    level: 2
+    check: reviewed
+    title_fa: "رمزنگاری داده‌های ذخیره‌شده"
+    title_en: "Encryption at rest"
+    requirement_fa: "ذخیره‌سازهای حاوی داده شخصی (پایگاه‌داده، فایل، پشتیبان) رمزنگاری شده‌اند و کلیدها جدا از داده نگهداری می‌شوند."
+    requirement_en: "Stores holding personal data (databases, files, backups) are encrypted, and keys are kept separate from the data."
+    evidence: [config, interview]
+    mappings:
+      gdpr: ["Art. 32"]
+      asvs: ["V6"]
+  - id: SEC-04
+    level: 2
+    check: reviewed
+    title_fa: "احراز هویت چندعاملی کارکنان"
+    title_en: "Staff multi-factor authentication"
+    requirement_fa: "دسترسی کارکنان به سامانه‌های عملیاتی و داده‌های کاربران نیازمند احراز هویت چندعاملی است."
+    requirement_en: "Staff access to production systems and user data requires multi-factor authentication."
+    evidence: [config, screenshot]
+    mappings:
+      gdpr: ["Art. 32"]
+      asvs: ["V2"]
+  - id: SEC-05
+    level: 2
+    check: reviewed
+    title_fa: "حداقل دسترسی و بازبینی دسترسی‌ها"
+    title_en: "Least privilege and access reviews"
+    requirement_fa: "دسترسی‌ها مبتنی بر نقش و به‌اندازهٔ نیاز است و دست‌کم هر سه ماه یک‌بار بازبینی می‌شود. دسترسی کارکنان خارج‌شده فوراً قطع می‌شود."
+    requirement_en: "Access is role-based and limited to need, reviewed at least quarterly. Leavers' access is removed immediately."
+    evidence: [log-sample, document]
+    mappings:
+      gdpr: ["Art. 32"]
+      asvs: ["V4"]
+  - id: SEC-06
+    level: 2
+    check: reviewed
+    title_fa: "ثبت دسترسی به داده شخصی"
+    title_en: "Access logging for personal data"
+    requirement_fa: "دسترسی به داده‌های شخصی ثبت می‌شود، ثبت‌ها محافظت‌شده نگهداری می‌شوند و بازبینی می‌شوند."
+    requirement_en: "Access to personal data is logged, logs are protected and reviewed."
+    evidence: [log-sample, config]
+    mappings:
+      gdpr: ["Art. 32"]
+      asvs: ["V7"]
+  - id: SEC-07
+    level: 2
+    check: reviewed
+    title_fa: "ذخیرهٔ امن رمز عبور"
+    title_en: "Secure password storage"
+    requirement_fa: "رمزهای عبور کاربران با الگوریتم مناسب مخصوص رمز (مانند argon2id، bcrypt یا scrypt) و با نمک ذخیره می‌شوند. هرگز به‌صورت متن ساده یا هش سریع."
+    requirement_en: "User passwords are stored using a suitable password hashing algorithm (such as argon2id, bcrypt or scrypt) with salts, never in plain text or fast hashes."
+    evidence: [config, interview]
+    mappings:
+      gdpr: ["Art. 32"]
+      asvs: ["V2"]
+  - id: SEC-08
+    level: 1
+    check: auto
+    title_fa: "مسیر گزارش آسیب‌پذیری"
+    title_en: "Vulnerability disclosure channel"
+    requirement_fa: "فایل security.txt یا صفحه‌ای معادل، با مسیر تماس برای گزارش آسیب‌پذیری وجود دارد."
+    requirement_en: "A security.txt file or equivalent page with a contact for vulnerability reports exists."
+    evidence: [scan, url]
+    mappings:
+      gdpr: ["Art. 32"]
+  - id: SEC-09
+    level: 2
+    check: reviewed
+    title_fa: "پشتیبان رمزنگاری‌شده و آزمودهٔ بازیابی"
+    title_en: "Encrypted, restore-tested backups"
+    requirement_fa: "پشتیبان‌ها رمزنگاری شده‌اند و بازیابی آن‌ها دست‌کم سالی یک‌بار آزموده می‌شود."
+    requirement_en: "Backups are encrypted and restores are tested at least yearly."
+    evidence: [test-result, document]
+    mappings:
+      gdpr: ["Art. 32"]
+  - id: SEC-10
+    level: 3
+    check: reviewed
+    title_fa: "تست نفوذ مستقل سالانه"
+    title_en: "Yearly independent penetration test"
+    requirement_fa: "هر سال یک تست نفوذ مستقل انجام می‌شود و خلاصهٔ نتایج و روند رفع آن‌ها در اختیار ممیز قرار می‌گیرد."
+    requirement_en: "An independent penetration test is performed yearly and a summary of results and remediation is given to the auditor."
+    evidence: [test-result]
+    mappings:
+      gdpr: ["Art. 32"]

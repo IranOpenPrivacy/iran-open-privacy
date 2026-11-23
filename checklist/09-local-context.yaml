@@ -1,0 +1,47 @@
+schema_version: 1
+domain:
+  id: LOC
+  number: 9
+  title_fa: "زمینهٔ محلی"
+  title_en: "Local context"
+  summary_fa: "آنچه از استانداردهای بیرونی قابل رونویسی نیست: محل داده، درخواست‌های اشخاص ثالث و مراجع، و الزامات محلی. این حوزه هنوز بازبینی حقوقی نشده است."
+  summary_en: "What cannot be copied from foreign standards: data location, requests from third parties and authorities, and local obligations. This domain has not yet had legal review."
+  status: draft-pending-legal-review
+controls:
+  - id: LOC-01
+    level: 1
+    check: declared
+    title_fa: "اعلام محل داده"
+    title_en: "Data location disclosed"
+    requirement_fa: "سند می‌گوید داده‌های شخصی در چه کشوری و نزد کدام ارائه‌دهندهٔ میزبانی نگهداری می‌شوند."
+    requirement_en: "The document states in which country and with which hosting provider personal data is stored."
+    evidence: [document]
+    mappings:
+      gdpr: ["Art. 13(1)(f)"]
+      local:
+        status: draft-pending-legal-review
+        refs: []
+  - id: LOC-02
+    level: 2
+    check: reviewed
+    title_fa: "سیاست مواجهه با درخواست‌های اشخاص ثالث و مراجع"
+    title_en: "Policy for third-party and authority data requests"
+    requirement_fa: "سیاستی مکتوب و منتشرشده وجود دارد که می‌گوید با درخواست دسترسی به داده‌های کاربران از سوی اشخاص ثالث و مراجع چگونه برخورد می‌شود: چه کسی تصمیم می‌گیرد، چه مدارکی لازم است و آیا در صورت مجاز بودن به کاربر اطلاع داده می‌شود."
+    requirement_en: "A written, published policy explains how requests for user data from third parties and authorities are handled: who decides, what documentation is required, and whether the user is informed where permitted."
+    evidence: [document, interview]
+    mappings:
+      local:
+        status: draft-pending-legal-review
+        refs: []
+  - id: LOC-03
+    level: 2
+    check: reviewed
+    title_fa: "اعلام الزامات محلی محدودکنندهٔ حریم خصوصی"
+    title_en: "Disclosure of local obligations that limit privacy"
+    requirement_fa: "اگر الزام قانونی یا مقررات محلی شرکت را به نگهداری یا افشای داده‌ای وادار می‌کند، این الزام به زبان ساده در سند به کاربر گفته می‌شود."
+    requirement_en: "If a legal or regulatory obligation requires the company to retain or disclose data, this is stated in plain language to users."
+    evidence: [document]
+    mappings:
+      local:
+        status: draft-pending-legal-review
+        refs: []

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iranopenprivacy.org/schemas/attestation.schema.json",
+  "title": "IOP signed attestation",
+  "description": "Machine-readable statement that a specific version of a company's privacy document holds a given IOP level. Published at /c/<slug>/attestation.json.",
+  "type": "object",
+  "required": [
+    "schema_version", "company_slug", "domain", "level", "level_name",
+    "document_version", "content_hash", "granted", "expires", "verified_by", "signature"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": 1 },
+    "company_slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "domain": { "type": "string" },
+    "level": { "enum": [1, 2, 3] },
+    "level_name": { "enum": ["declared", "verified", "continuously-verified"] },
+    "document_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "content_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "granted": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "expires": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "status": { "enum": ["active", "changed-since-verified", "expired", "revoked"], "default": "active" },
+    "verified_by": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["handle", "role"],
+        "additionalProperties": false,
+        "properties": {
+          "handle": { "type": "string" },
+          "role": { "enum": ["scanner", "reviewer", "maintainer", "auditor"] }
+        }
+      }
+    },
+    "report_url": { "type": "string" },
+    "signature": {
+      "type": "object",
+      "required": ["alg", "key_id", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "alg": { "enum": ["ed25519"] },
+        "key_id": { "type": "string" },
+        "value": { "type": "string" }
+      }
+    }
+  },
+  "allOf": [
+    { "if": { "properties": { "level": { "const": 1 } } }, "then": { "properties": { "level_name": { "const": "declared" } } } },
+    { "if": { "properties": { "level": { "const": 2 } } }, "then": { "properties": { "level_name": { "const": "verified" } }, "required": ["report_url"] } },
+    { "if": { "properties": { "level": { "const": 3 } } }, "then": { "properties": { "level_name": { "const": "continuously-verified" } }, "required": ["report_url"] } }
+  ]
+}

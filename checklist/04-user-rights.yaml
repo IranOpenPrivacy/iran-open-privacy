@@ -1,0 +1,67 @@
+schema_version: 1
+domain:
+  id: RTS
+  number: 4
+  title_fa: "حقوق کاربران"
+  title_en: "User rights"
+  summary_fa: "کاربر می‌تواند به داده‌اش دسترسی پیدا کند، آن را اصلاح، دریافت یا حذف کند."
+  summary_en: "Users can access, correct, export and delete their data."
+controls:
+  - id: RTS-01
+    level: 1
+    check: declared
+    title_fa: "مسیر درخواست دسترسی"
+    title_en: "Access request channel"
+    requirement_fa: "مسیری عمومی برای درخواست دسترسی به داده‌های شخصی وجود دارد و در سند معرفی شده است."
+    requirement_en: "A public channel for requesting access to personal data exists and is described in the document."
+    evidence: [url, document]
+    mappings:
+      gdpr: ["Art. 15"]
+      iso27701: ["7.3"]
+      local:
+        status: draft-pending-legal-review
+        refs: ["قانون تجارت الکترونیکی، ماده ۵۹ بند د"]
+  - id: RTS-02
+    level: 2
+    check: reviewed
+    title_fa: "فرایند دسترسی، اصلاح، حذف و دریافت"
+    title_en: "Process for access, correction, deletion and export"
+    requirement_fa: "فرایندی مکتوب برای دسترسی، اصلاح، حذف و دریافت داده با مهلت پاسخ (هدف: ۳۰ روز) وجود دارد و عملاً اجرا می‌شود."
+    requirement_en: "A written process for access, correction, deletion and export with a response deadline (target: 30 days) exists and is followed."
+    evidence: [document, log-sample]
+    mappings:
+      gdpr: ["Art. 12(3)", "Art. 15", "Art. 16", "Art. 17", "Art. 20"]
+      iso27701: ["7.3"]
+      local:
+        status: draft-pending-legal-review
+        refs: ["قانون تجارت الکترونیکی، ماده ۵۹ بند د"]
+  - id: RTS-03
+    level: 2
+    check: reviewed
+    title_fa: "احراز هویت متناسب"
+    title_en: "Proportionate identity verification"
+    requirement_fa: "پیش از انجام درخواست‌ها هویت درخواست‌کننده به‌اندازهٔ لازم و بدون جمع‌آوری داده اضافی احراز می‌شود."
+    requirement_en: "Requesters are verified as far as necessary, without collecting extra data."
+    evidence: [document, interview]
+    mappings:
+      gdpr: ["Art. 12(6)"]
+  - id: RTS-04
+    level: 1
+    check: declared
+    title_fa: "امکان حذف حساب"
+    title_en: "Account deletion"
+    requirement_fa: "کاربر می‌تواند حذف حساب خود را از داخل محصول یا با درخواست مستقیم انجام دهد."
+    requirement_en: "Users can delete their account in the product or by direct request."
+    evidence: [screenshot, document]
+    mappings:
+      gdpr: ["Art. 17"]
+  - id: RTS-05
+    level: 2
+    check: reviewed
+    title_fa: "ثبت درخواست‌ها"
+    title_en: "Request log"
+    requirement_fa: "درخواست‌های حقوق کاربران ثبت می‌شود و آمار بی‌نام آن (تعداد، زمان پاسخ) برای بازبین قابل ارائه است."
+    requirement_en: "User rights requests are logged and anonymized statistics (count, response time) can be shown to reviewers."
+    evidence: [log-sample]
+    mappings:
+      gdpr: ["Art. 5(2)"]

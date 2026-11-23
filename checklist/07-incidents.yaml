@@ -1,0 +1,49 @@
+schema_version: 1
+domain:
+  id: INC
+  number: 7
+  title_fa: "رخدادها"
+  title_en: "Incidents"
+  summary_fa: "اگر چیزی بد پیش برود، شرکت آمادگی دارد و به کاربران صادقانه اطلاع می‌دهد."
+  summary_en: "If something goes wrong, the company is prepared and tells users honestly."
+controls:
+  - id: INC-01
+    level: 1
+    check: declared
+    title_fa: "مسیر گزارش رخداد"
+    title_en: "Incident reporting contact"
+    requirement_fa: "مسیر تماس برای گزارش رخداد حریم خصوصی یا امنیتی به‌صورت عمومی منتشر شده است."
+    requirement_en: "A contact for reporting privacy or security incidents is published."
+    evidence: [url, document]
+    mappings:
+      gdpr: ["Art. 33"]
+  - id: INC-02
+    level: 2
+    check: reviewed
+    title_fa: "برنامهٔ مکتوب پاسخ به رخداد"
+    title_en: "Written incident response plan"
+    requirement_fa: "برنامهٔ مکتوبی با نقش‌ها و مراحل پاسخ به رخداد وجود دارد و دست‌کم سالی یک‌بار تمرین می‌شود."
+    requirement_en: "A written plan with roles and steps exists and is exercised at least yearly."
+    evidence: [document, interview]
+    mappings:
+      gdpr: ["Art. 33"]
+  - id: INC-03
+    level: 2
+    check: reviewed
+    title_fa: "اطلاع‌رسانی به کاربران آسیب‌دیده"
+    title_en: "Notifying affected users"
+    requirement_fa: "کاربرانی که از نشت داده تأثیر می‌پذیرند ظرف ۷۲ ساعت پس از تأیید نشت اطلاع می‌گیرند. در اطلاعیه می‌گوید چه داده‌ای، چه خطری و چه اقدامی لازم است."
+    requirement_en: "Users affected by a breach are notified within 72 hours of confirmation, with what data, what risk and what action is needed."
+    evidence: [document, log-sample]
+    mappings:
+      gdpr: ["Art. 34"]
+  - id: INC-04
+    level: 2
+    check: reviewed
+    title_fa: "بازبینی پس از رخداد"
+    title_en: "Post-incident review"
+    requirement_fa: "پس از هر رخداد جدی بازبینی انجام می‌شود و خلاصهٔ آن علنی منتشر می‌شود."
+    requirement_en: "A review follows every serious incident and a summary is published."
+    evidence: [document]
+    mappings:
+      gdpr: ["Art. 33(5)"]

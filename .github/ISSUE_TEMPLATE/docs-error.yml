@@ -1,0 +1,22 @@
+name: خطا یا ابهام در متن
+description: غلط املایی، ترجمهٔ نادرست، پیوند خراب یا بخشی که مبهم است.
+title: "[متن] "
+labels: ["docs"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: کدام فایل یا صفحه؟
+      placeholder: "docs/fa/02-levels.md"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: مشکل چیست؟
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: پیشنهاد اصلاح (اختیاری)

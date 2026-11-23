@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: گزارش مشکل امنیتی دربارهٔ خود پروژه
+    url: https://github.com/iranopenprivacy/iran-open-privacy/security/policy
+    about: لطفاً مشکل امنیتی را علنی گزارش نکنید. از مسیر خصوصی در SECURITY.md استفاده کنید.
+  - name: پرسش و گفت‌وگو
+    url: https://github.com/iranopenprivacy/iran-open-privacy/discussions
+    about: برای پرسش‌های عمومی از بخش Discussions استفاده کنید.

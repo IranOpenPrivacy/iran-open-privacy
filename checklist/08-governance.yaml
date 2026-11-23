@@ -1,0 +1,61 @@
+schema_version: 1
+domain:
+  id: GOV
+  number: 8
+  title_fa: "حاکمیت"
+  title_en: "Governance"
+  summary_fa: "کسی در شرکت مسئول حریم خصوصی است و تصمیم‌ها دربارهٔ داده آگاهانه گرفته می‌شود."
+  summary_en: "Someone in the company owns privacy, and decisions about data are made deliberately."
+controls:
+  - id: GOV-01
+    level: 2
+    check: reviewed
+    title_fa: "مسئول مشخص حریم خصوصی"
+    title_en: "Named privacy owner"
+    requirement_fa: "یک نفر مشخص مسئول حریم خصوصی است و نام یا سمت او در سند آمده است."
+    requirement_en: "A specific person is responsible for privacy and their name or role is in the document."
+    evidence: [document, interview]
+    mappings:
+      gdpr: ["Art. 37", "Art. 38", "Art. 39"]
+      iso27701: ["7.2"]
+  - id: GOV-02
+    level: 2
+    check: reviewed
+    title_fa: "آموزش کارکنان"
+    title_en: "Staff training"
+    requirement_fa: "کارکنان هنگام ورود و سالی یک‌بار دربارهٔ حریم خصوصی و امنیت آموزش می‌بینند."
+    requirement_en: "Staff are trained on privacy and security at onboarding and yearly."
+    evidence: [document, log-sample]
+    mappings:
+      gdpr: ["Art. 39(1)(b)", "Art. 32(4)"]
+  - id: GOV-03
+    level: 2
+    check: reviewed
+    title_fa: "بررسی حریم خصوصی پیش از ویژگی جدید"
+    title_en: "Privacy review before new features"
+    requirement_fa: "پیش از راه‌اندازی ویژگی‌ای که نحوهٔ استفاده از داده را تغییر می‌دهد، بررسی حریم خصوصی انجام می‌شود و نتیجه ثبت می‌شود."
+    requirement_en: "A privacy review is done and recorded before launching a feature that changes how data is used."
+    evidence: [document, interview]
+    mappings:
+      gdpr: ["Art. 25", "Art. 35"]
+      iso27701: ["7.4"]
+  - id: GOV-04
+    level: 1
+    check: declared
+    title_fa: "اعلام فروش یا اشتراک داده برای تبلیغات"
+    title_en: "Disclosure of data sale or ad sharing"
+    requirement_fa: "سند روشن می‌گوید آیا داده‌های شخصی فروخته می‌شود یا برای تبلیغات با دیگران به اشتراک گذاشته می‌شود. پاسخ «نه» هم باید صریح بنویسد."
+    requirement_en: "The document states clearly whether personal data is sold or shared for advertising. A \"no\" must also be explicit."
+    evidence: [document]
+    mappings:
+      gdpr: ["Art. 13(1)(e)"]
+  - id: GOV-05
+    level: 3
+    check: reviewed
+    title_fa: "بازبینی دوره‌ای کنترل‌ها"
+    title_en: "Scheduled control reviews"
+    requirement_fa: "کنترل‌های داخلی به‌صورت دوره‌ای (دست‌کم فصلی) توسط خود شرکت بازبینی و نتیجه برای ممیز ثبت می‌شود."
+    requirement_en: "The company reviews its own controls on a schedule (at least quarterly) and records results for the auditor."
+    evidence: [document, log-sample]
+    mappings:
+      gdpr: ["Art. 24"]

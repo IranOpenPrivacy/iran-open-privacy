@@ -1,0 +1,62 @@
+schema_version: 1
+domain:
+  id: THP
+  number: 5
+  title_fa: "اشخاص ثالث"
+  title_en: "Third parties"
+  summary_fa: "کاربر می‌داند چه کسانی داده‌اش را می‌بینند، چرا و در کدام کشور."
+  summary_en: "Users know who sees their data, why, and in which country."
+controls:
+  - id: THP-01
+    level: 1
+    check: auto
+    title_fa: "فهرست عمومی زیرپردازشگرها"
+    title_en: "Public subprocessor list"
+    requirement_fa: "فهرست عمومی اشخاص ثالثی که به داده‌های شخصی دسترسی دارند، با هدف و کشور هر کدام منتشر شده است."
+    requirement_en: "A public list of third parties with access to personal data, with purpose and country for each."
+    evidence: [url, document]
+    mappings:
+      gdpr: ["Art. 13(1)(e)", "Art. 28"]
+      iso27701: ["7.5"]
+  - id: THP-02
+    level: 1
+    check: auto
+    title_fa: "اعلام ردیاب‌ها و SDKها"
+    title_en: "Trackers and SDKs disclosed"
+    requirement_fa: "ردیاب‌ها و SDKهای شخص ثالث در سایت و اپ (تحلیل، تبلیغات، نقشه، پرداخت و مانند آن) در سند اعلام شده‌اند. ابزار خودکار ردیاب‌های شناخته‌شدهٔ سایت را با سند مقایسه می‌کند."
+    requirement_en: "Third-party trackers and SDKs on the site and app (analytics, ads, maps, payments and so on) are disclosed. The scanner compares known trackers on the site with the document."
+    evidence: [scan, document]
+    mappings:
+      gdpr: ["Art. 13"]
+  - id: THP-03
+    level: 2
+    check: reviewed
+    title_fa: "قرارداد با هر پردازشگر"
+    title_en: "Agreement with each processor"
+    requirement_fa: "با هر پردازشگر قراردادی مکتوب وجود دارد که امنیت و محدودیت استفاده از داده را پوشش می‌دهد."
+    requirement_en: "A written agreement with each processor covers security and limits on use."
+    evidence: [contract]
+    mappings:
+      gdpr: ["Art. 28(3)"]
+      iso27701: ["7.5"]
+  - id: THP-04
+    level: 2
+    check: reviewed
+    title_fa: "محل داده و انتقال برون‌مرزی"
+    title_en: "Data location and cross-border transfers"
+    requirement_fa: "کشور ذخیره و پردازش داده‌های شخصی و هرگونه انتقال برون‌مرزی علناً اعلام شده است."
+    requirement_en: "The country where personal data is stored and processed, and any cross-border transfers, are disclosed publicly."
+    evidence: [document, config]
+    mappings:
+      gdpr: ["Art. 44", "Art. 45", "Art. 46"]
+      iso27701: ["7.5"]
+  - id: THP-05
+    level: 2
+    check: reviewed
+    title_fa: "بازبینی سالانهٔ تأمین‌کنندگان"
+    title_en: "Yearly vendor review"
+    requirement_fa: "دست‌کم سالی یک‌بار رعایت امنیت و حریم خصوصی تأمین‌کنندگان بازبینی می‌شود."
+    requirement_en: "Vendors' privacy and security practices are reviewed at least yearly."
+    evidence: [document]
+    mappings:
+      gdpr: ["Art. 28(1)"]
